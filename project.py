@@ -38,6 +38,7 @@ class Ui_password_page(object):
         font.setPointSize(15)
         self.lineEdit_password.setFont(font)
         self.lineEdit_password.setObjectName("lineEdit_password")
+        self.lineEdit_password.setEchoMode(QtWidgets.QLineEdit.PasswordEchoOnEdit)
         self.verticalLayout.addWidget(self.lineEdit_password)
         self.Button_login = QtWidgets.QPushButton(password_page)
         self.Button_login.setGeometry(QtCore.QRect(460, 80, 111, 31))
@@ -158,7 +159,8 @@ class Ui_reg_page(object):
         self.label.setText(_translate("reg_page", "Ваш пароль:"))
         self.label_2.setText(_translate("reg_page", "Ваше имя:"))
         self.error_label.setText(_translate("reg_page",
-                                            "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\"><br/></span></p></body></html>"))
+                                            "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;"
+                                            " color:#ff0000;\"><br/></span></p></body></html>"))
         self.reg_Button.setText(_translate("reg_page", "Зарегестрироваться"))
 
 
@@ -200,7 +202,10 @@ class Ui_main_window(object):
         self.read_label.setText(_translate("main_window", "Хотите узнать что-то новое?"))
         self.read_Button.setText(_translate("main_window", "Да!"))
         self.help_label.setText(_translate("main_window",
-                                           "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Оказались в опасной ситуации?</span></p><p align=\"center\"><span style=\" font-size:12pt;\">Потерялись?</span></p><p align=\"center\"><span style=\" font-size:12pt;\">Не знаете что вам делать?</span></p></body></html>"))
+                                           "<html><head/><body><p align=\"center\"><span style=\""
+                                           " font-size:12pt;\">Оказались в опасной ситуации?</span></p><p align=\"center\"><span"
+                                           " style=\" font-size:12pt;\">Потерялись?</span></p><p align=\"center\"><span"
+                                           " style=\" font-size:12pt;\">Не знаете что вам делать?</span></p></body></html>"))
 
 
 class Ui_main_window_user(object):
@@ -263,55 +268,73 @@ class Ui_main_window_user(object):
         self.back_buttom.setText(_translate("main_window_user", "<-- Назад"))
 
 
-class Ui_swap_password(object):
-    def setupUi(self, swap_password):
-        swap_password.setObjectName("swap_password")
-        swap_password.resize(265, 380)
+class Ui_Swap_password_window(object):
+    def setupUi(self, Swap_password_window):
+        Swap_password_window.setObjectName("Swap_password_window")
+        Swap_password_window.resize(340, 480)
         font = QtGui.QFont()
         font.setPointSize(12)
-        swap_password.setFont(font)
-        self.label_login = QtWidgets.QLabel(swap_password)
-        self.label_login.setGeometry(QtCore.QRect(30, 20, 211, 21))
-        self.label_login.setObjectName("label_login")
-        self.lineEdit_login = QtWidgets.QLineEdit(swap_password)
-        self.lineEdit_login.setGeometry(QtCore.QRect(40, 60, 191, 21))
-        self.lineEdit_login.setObjectName("lineEdit_login")
-        self.label_password = QtWidgets.QLabel(swap_password)
-        self.label_password.setGeometry(QtCore.QRect(30, 100, 221, 31))
-        self.label_password.setObjectName("label_password")
-        self.lineEdit_new_password = QtWidgets.QLineEdit(swap_password)
-        self.lineEdit_new_password.setGeometry(QtCore.QRect(40, 140, 191, 22))
-        self.lineEdit_new_password.setEchoMode(QtWidgets.QLineEdit.PasswordEchoOnEdit)
+        Swap_password_window.setFont(font)
+        self.verticalLayoutWidget = QtWidgets.QWidget(Swap_password_window)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(40, 10, 261, 301))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.label_old_password = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label_old_password.setObjectName("label_old_password")
+        self.verticalLayout.addWidget(self.label_old_password)
+        self.lineEdit_old_password = QtWidgets.QLineEdit(self.verticalLayoutWidget)
+        self.lineEdit_old_password.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.lineEdit_old_password.setObjectName("lineEdit_old_password")
+        self.verticalLayout.addWidget(self.lineEdit_old_password)
+        self.label_new_password = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label_new_password.setObjectName("label_new_password")
+        self.verticalLayout.addWidget(self.label_new_password)
+        self.lineEdit_new_password = QtWidgets.QLineEdit(self.verticalLayoutWidget)
         self.lineEdit_new_password.setObjectName("lineEdit_new_password")
-        self.label_password2 = QtWidgets.QLabel(swap_password)
-        self.label_password2.setGeometry(QtCore.QRect(30, 180, 211, 31))
-        self.label_password2.setObjectName("label_password2")
-        self.lineEdit_new_password2 = QtWidgets.QLineEdit(swap_password)
-        self.lineEdit_new_password2.setGeometry(QtCore.QRect(40, 220, 191, 22))
-        self.lineEdit_new_password2.setEchoMode(QtWidgets.QLineEdit.PasswordEchoOnEdit)
+        self.verticalLayout.addWidget(self.lineEdit_new_password)
+        self.label_new_password2 = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label_new_password2.setObjectName("label_new_password2")
+        self.verticalLayout.addWidget(self.label_new_password2)
+        self.lineEdit_new_password2 = QtWidgets.QLineEdit(self.verticalLayoutWidget)
         self.lineEdit_new_password2.setObjectName("lineEdit_new_password2")
-        self.reg_Button = QtWidgets.QPushButton(swap_password)
-        self.reg_Button.setGeometry(QtCore.QRect(60, 330, 141, 31))
-        self.reg_Button.setObjectName("reg_Button")
-        self.label_error = QtWidgets.QLabel(swap_password)
-        self.label_error.setGeometry(QtCore.QRect(10, 260, 241, 61))
-        self.label_error.setObjectName("label_error")
+        self.verticalLayout.addWidget(self.lineEdit_new_password2)
+        self.horizontalLayoutWidget = QtWidgets.QWidget(Swap_password_window)
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(20, 380, 301, 80))
+        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.back_pushButton = QtWidgets.QPushButton(self.horizontalLayoutWidget)
+        self.back_pushButton.setObjectName("back_pushButton")
+        self.horizontalLayout.addWidget(self.back_pushButton)
+        self.pushButton_swap = QtWidgets.QPushButton(self.horizontalLayoutWidget)
+        self.pushButton_swap.setObjectName("pushButton_swap")
+        self.horizontalLayout.addWidget(self.pushButton_swap)
+        self.error_label = QtWidgets.QLabel(Swap_password_window)
+        self.error_label.setGeometry(QtCore.QRect(20, 320, 301, 51))
+        self.error_label.setObjectName("error_label")
 
-        self.retranslateUi(swap_password)
-        QtCore.QMetaObject.connectSlotsByName(swap_password)
+        self.retranslateUi(Swap_password_window)
+        QtCore.QMetaObject.connectSlotsByName(Swap_password_window)
 
-    def retranslateUi(self, swap_password):
+    def retranslateUi(self, Swap_password_window):
         _translate = QtCore.QCoreApplication.translate
-        swap_password.setWindowTitle(_translate("swap_password", "Изменение пароля"))
-        self.label_login.setText(
-            _translate("swap_password", "<html><head/><body><p align=\"center\">Введите свой логин:</p></body></html>"))
-        self.label_password.setText(_translate("swap_password",
-                                               "<html><head/><body><p align=\"center\">Введите новый пароль:</p></body></html>"))
-        self.label_password2.setText(
-            _translate("swap_password", "<html><head/><body><p align=\"center\">Повторите пароль:</p></body></html>"))
-        self.reg_Button.setText(_translate("swap_password", "Поменять"))
-        self.label_error.setText(_translate("swap_password",
-                                            "<html><head/><body><p align=\"center\"><span style=\" color:#ff0000;\"><br/></span></p></body></html>"))
+        Swap_password_window.setWindowTitle(_translate("Swap_password_window", "Изменение пароля"))
+        self.label_old_password.setText(_translate("Swap_password_window",
+                                                   "<html><head/><body><p align=\"center\"><span style=\""
+                                                   " font-size:12pt; text-decoration: underline;\">Введите старый пароль:</span></p></body></html>"))
+        self.label_new_password.setText(_translate("Swap_password_window",
+                                                   "<html><head/><body><p align=\"center\"><span style=\""
+                                                   " font-size:12pt; text-decoration: underline;\">Введите новый пароль:</span></p></body></html>"))
+        self.label_new_password2.setText(_translate("Swap_password_window",
+                                                    "<html><head/><body><p align=\"center\"><span style=\""
+                                                    " font-size:12pt; text-decoration: underline;\">Повторите пароль:</span></p></body></html>"))
+        self.back_pushButton.setText(_translate("Swap_password_window", "<-- Назад"))
+        self.pushButton_swap.setText(_translate("Swap_password_window", "Поменять"))
+        self.error_label.setText(
+            _translate("Swap_password_window", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
 
 
 class Ui_Help_window(object):
@@ -436,7 +459,6 @@ class Ui_Help_window1_1(object):
         self.return_but.setText(_translate("Help_window1_1", "Вернуться на главную страницу"))
 
 
-
 class Ui_Help_window2(object):
     def setupUi(self, Help_window2):
         Help_window2.setObjectName("Help_window2")
@@ -485,11 +507,6 @@ class Ui_Help_window2(object):
         self.next_button.setText(_translate("Help_window2", "Далее"))
 
 
-
-
-data = {'a': '1;Egor'}
-
-
 class Password_form(QMainWindow, Ui_password_page):
     def __init__(self):
         super().__init__()
@@ -500,17 +517,29 @@ class Password_form(QMainWindow, Ui_password_page):
         self.reg_buttom.clicked.connect(self.registr)
 
     def run(self):
-        if self.lineEdit_login.text() == '' or self.lineEdit_password.text() == '':
+        global form3
+        con = sqlite3.connect("info.sqlite")
+        cur = con.cursor()
+        result = cur.execute("""SELECT login FROM user_info""").fetchall()
+        logins = []
+        for elem in result:
+            logins.append(elem[0])
+        if self.lineEdit_login.text() in logins:
+            password = cur.execute(
+                f"""SELECT password, id_user FROM user_info where login = '{self.lineEdit_login.text()}'""").fetchall()
+            if self.lineEdit_password.text() == password[0][0]:
+                form3 = Main_window(password[0][-1])
+
+                form1.hide()
+                form3.show()
+                con.close()
+            else:
+                self.check_label.setText('Ошибка')
+                con.close()
+        else:
             self.check_label.setText('Ошибка!')
-        elif self.lineEdit_login.text() not in data.keys() or data[
-            self.lineEdit_login.text()].split(';')[0] != self.lineEdit_password.text():
-            self.check_label.setText('Ошибка!')
-        elif self.lineEdit_login.text() in data.keys() and data[
-            self.lineEdit_login.text()].split(';')[0] == self.lineEdit_password.text():
-            global user
-            user = self.lineEdit_login.text()
-            form1.hide()
-            form3.show()
+            con.close()
+        con.close()
 
     def registr(self):
         form1.hide()
@@ -528,23 +557,14 @@ class Regist_window(QMainWindow, Ui_reg_page):
     def run(self):
         if self.lineEdit_login.text() == '':
             self.error_label.setText(
-                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Введите логин!<br/></span></p></body></html>")
+                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Заполните поле для логина!<br/></span></p></body></html>")
         elif self.lineEdit_password.text() == '':
             self.error_label.setText(
-                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Введите пароль!<br/></span></p></body></html>")
+                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Заполните поле для пароля!<br/></span></p></body></html>")
         elif self.lineEdit_name_user.text() == '':
             self.error_label.setText(
-                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Введите свое имя!<br/></span></p></body></html>")
-        elif len(self.lineEdit_login.text()) < 4:
-            self.error_label.setText(
-                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Логин должен быть больше 3 символов!<br/></span></p></body></html>")
-        elif self.lineEdit_login.text() in data.keys():
-            self.error_label.setText(
-                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Этот логин уже занят!<br/></span></p></body></html>")
-        elif len(self.lineEdit_password.text()) < 8:
-            self.error_label.setText(
-                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Пароль должен быть больше 7 символов!<br/></span></p></body></html>")
-        elif len(self.lineEdit_password.text()) > 7:
+                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Заполните поле для имени!<br/></span></p></body></html>")
+        if len(self.lineEdit_password.text()) > 7:
             count_upper = 0
             count_lowwer = 0
             count_numbers = 0
@@ -559,6 +579,12 @@ class Regist_window(QMainWindow, Ui_reg_page):
                     self.error_label.setText(
                         "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть только цифры и буквы!<br/></span></p></body></html>")
                     break
+            con = sqlite3.connect("info.sqlite")
+            cur = con.cursor()
+            result = cur.execute("""SELECT login FROM user_info""").fetchall()
+            logins = []
+            for elem in result:
+                logins.append(elem[0])
             if count_upper == 0:
                 self.error_label.setText(
                     "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть заглавные буквы!<br/></span></p></body></html>")
@@ -568,17 +594,27 @@ class Regist_window(QMainWindow, Ui_reg_page):
             elif count_numbers == 0:
                 self.error_label.setText(
                     "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть цифры!<br/></span></p></body></html>")
+            elif self.lineEdit_login.text() in logins:
+                self.error_label.setText(
+                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Этот логин уже занят!<br/></span></p></body></html>")
             else:
-                global user
-                user = self.lineEdit_login.text()
-                data[self.lineEdit_login.text()] = self.lineEdit_password.text() + ';' + self.lineEdit_name_user.text()
+                global form3
+                inf = cur.execute(
+                    f"""INSERT INTO user_info(login, password, username, score) VALUES('{self.lineEdit_login.text()}',
+                     '{self.lineEdit_password.text()}', '{self.lineEdit_name_user.text()}', '0')""")
+                con.commit()
+                result = cur.execute("""SELECT id_user FROM user_info""").fetchall()
+                result = result[0][0]
+                con.close()
                 form2.hide()
+                form3 = Main_window(result)
                 form3.show()
 
 
 class Main_window(QMainWindow, Ui_main_window):
-    def __init__(self):
+    def __init__(self, id):
         super().__init__()
+        self.id = id
         self.setupUi(self)
         self.setWindowTitle('Главное окно')
         QWidget.setFixedSize(self, 609, 410)
@@ -586,6 +622,8 @@ class Main_window(QMainWindow, Ui_main_window):
         self.help_button.clicked.connect(self.open_help_win)
 
     def run(self):
+        global form3_1
+        form3_1 = Main_window_user(self.id)
         form3.hide()
         form3_1.show()
 
@@ -595,18 +633,25 @@ class Main_window(QMainWindow, Ui_main_window):
 
 
 class Main_window_user(QMainWindow, Ui_main_window_user):
-    def __init__(self):
-        global user
+    def __init__(self, id):
         super().__init__()
         self.setupUi(self)
+        self.id = id
         QWidget.setFixedSize(self, 679, 434)
         self.swap_password.clicked.connect(self.run)
         self.back_buttom.clicked.connect(self.back)
-        self.login.setText(user)
-        self.username.setText(data[user].split(';')[
-                                  -1])  # доделать проверку логина и имени пользователя на наличие ; доделать чтобы был не админ
+        con = sqlite3.connect("info.sqlite")
+        cur = con.cursor()
+        info = cur.execute(f"""SELECT login, username FROM user_info
+                                            WHERE id_user = {id}""").fetchall()
+        con.close()
+        info = info[0]
+        self.login.setText(str(info[0]))
+        self.username.setText(str(info[1]))
 
     def run(self):
+        global form3_2
+        form3_2 = Swap_password(self.id)
         form3_1.hide()
         form3_2.show()
 
@@ -615,25 +660,24 @@ class Main_window_user(QMainWindow, Ui_main_window_user):
         form3.show()
 
 
-class Swap_password(QMainWindow, Ui_swap_password):
-    def __init__(self):
+class Swap_password(QMainWindow, Ui_Swap_password_window):
+    def __init__(self, id):
         super().__init__()
+        self.id = id
         self.setupUi(self)
-        QWidget.setFixedSize(self, 265, 380)
-        self.reg_Button.clicked.connect(self.run)
-        self.label_error.setWordWrap(True)
+        QWidget.setFixedSize(self, 340, 480)
+        self.pushButton_swap.clicked.connect(self.run)
+        self.back_pushButton.clicked.connect(self.back)
+        self.error_label.setWordWrap(True)
 
     def run(self):
-        if self.lineEdit_login.text() != user:
-            self.label_error.setText(
-                '<html><head/><body><p align=\"center\"><span style=\" color:#ff0000;\">Неправильный логин!<br/></span></p></body></html>')
-        elif self.lineEdit_new_password.text() != self.lineEdit_new_password2.text():
-            self.label_error.setText(
-                '<html><head/><body><p align=\"center\"><span style=\" color:#ff0000;\">Пароли не совпадают!<br/></span></p></body></html>')
-        elif len(self.lineEdit_new_password.text()) < 8:
-            self.label_error.setText(
-                '<html><head/><body><p align=\"center\"><span style=\" color:#ff0000;\">Пароль должен быть больше 7 символов!<br/></span></p></body></html>')
-        elif len(self.lineEdit_new_password.text()) > 7:
+        con = sqlite3.connect("info.sqlite")
+        cur = con.cursor()
+        info = cur.execute(f"""SELECT password FROM user_info
+                                                    WHERE id_user = {self.id}""").fetchall()
+        info = info[0][0]
+        con.close()
+        if self.lineEdit_old_password.text() == info:
             count_upper = 0
             count_lowwer = 0
             count_numbers = 0
@@ -649,19 +693,35 @@ class Swap_password(QMainWindow, Ui_swap_password):
                         "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть только цифры и буквы!<br/></span></p></body></html>")
                     break
             if count_upper == 0:
-                self.label_error.setText(
+                self.error_label.setText(
                     "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть заглавные буквы!<br/></span></p></body></html>")
             elif count_lowwer == 0:
-                self.label_error.setText(
+                self.error_label.setText(
                     "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть строчные буквы!<br/></span></p></body></html>")
             elif count_numbers == 0:
-                self.label_error.setText(
+                self.error_label.setText(
                     "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть цифры!<br/></span></p></body></html>")
-            elif self.lineEdit_login.text() == user and self.lineEdit_new_password.text() == self.lineEdit_new_password2.text() and len(
+            elif len(self.lineEdit_new_password.text()) < 8:
+                self.error_label.setText(
+                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Пароль должен быть больше 7 символов!<br/></span></p></body></html>")
+            elif self.lineEdit_new_password.text() == self.lineEdit_new_password2.text() and len(
                     self.lineEdit_new_password.text()) > 7:
-                data[user] = self.lineEdit_new_password.text() + data[user].split(';')[-1]
+                con = sqlite3.connect("info.sqlite")
+                cur = con.cursor()
+                inf = cur.execute(
+                    f"""UPDATE user_info SET password = '{self.lineEdit_new_password.text()}' where id_user = '{self.id}'""")
+                con.commit()
+                con.close()
                 form3_2.hide()
                 form3_1.show()
+        else:
+            self.error_label.setText(
+                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;"
+                " color:#ff0000;\">Неправильный пароль<br/></span></p></body></html>")
+
+    def back(self):
+        form3_2.hide()
+        form3_1.show()
 
 
 class Help_window(QMainWindow, Ui_Help_window):
@@ -688,6 +748,8 @@ class Help_window(QMainWindow, Ui_Help_window):
         elif self.question_radiob4.isChecked():
             form4_4.show()
             form4.hide()
+
+
 #
 
 
@@ -718,7 +780,7 @@ class Help_window1_result1(QMainWindow, Ui_Help_window1_1):
         QWidget.setFixedSize(self, 593, 564)
         self.return_but.clicked.connect(self.back)
 
-        con = sqlite3.connect("users_info.sqlite")
+        con = sqlite3.connect("info.sqlite")
         cur = con.cursor()
         if self.count == 1:
             result = cur.execute("""SELECT help_text FROM help_info
@@ -809,15 +871,14 @@ def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)
 
 
-
 user = 'a'
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     form1 = Password_form()
     form2 = Regist_window()
-    form3 = Main_window()
-    form3_1 = Main_window_user()
-    form3_2 = Swap_password()
+    form3 = Main_window(1)
+    form3_1 = Main_window_user(1)
+    form3_2 = Swap_password(1)
     form4 = Help_window()
     form4_1 = Help_window1()
     form4_1_1 = Help_window1_result1(3)
