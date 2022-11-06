@@ -8,9 +8,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_password_page(object):
     def setupUi(self, password_page):
         password_page.setObjectName("password_page")
-        password_page.resize(633, 364)
+        password_page.resize(678, 361)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        password_page.setFont(font)
         self.verticalLayoutWidget = QtWidgets.QWidget(password_page)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(30, 20, 381, 191))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(20, 20, 421, 211))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -22,9 +25,6 @@ class Ui_password_page(object):
         self.label_login.setObjectName("label_login")
         self.verticalLayout.addWidget(self.label_login)
         self.lineEdit_login = QtWidgets.QLineEdit(self.verticalLayoutWidget)
-        font = QtGui.QFont()
-        font.setPointSize(15)
-        self.lineEdit_login.setFont(font)
         self.lineEdit_login.setObjectName("lineEdit_login")
         self.verticalLayout.addWidget(self.lineEdit_login)
         self.label_password = QtWidgets.QLabel(self.verticalLayoutWidget)
@@ -33,50 +33,53 @@ class Ui_password_page(object):
         self.label_password.setFont(font)
         self.label_password.setObjectName("label_password")
         self.verticalLayout.addWidget(self.label_password)
-        self.lineEdit_password = QtWidgets.QLineEdit(self.verticalLayoutWidget)
-        font = QtGui.QFont()
-        font.setPointSize(15)
-        self.lineEdit_password.setFont(font)
-        self.lineEdit_password.setObjectName("lineEdit_password")
-        self.lineEdit_password.setEchoMode(QtWidgets.QLineEdit.PasswordEchoOnEdit)
-        self.verticalLayout.addWidget(self.lineEdit_password)
-        self.Button_login = QtWidgets.QPushButton(password_page)
-        self.Button_login.setGeometry(QtCore.QRect(460, 80, 111, 31))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.Button_login.setFont(font)
-        self.Button_login.setObjectName("Button_login")
-        self.label = QtWidgets.QLabel(password_page)
-        self.label.setGeometry(QtCore.QRect(40, 270, 151, 41))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.label.setFont(font)
-        self.label.setObjectName("label")
-        self.reg_buttom = QtWidgets.QPushButton(password_page)
-        self.reg_buttom.setGeometry(QtCore.QRect(210, 280, 171, 28))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.reg_buttom.setFont(font)
+        self.lineEdit_pasword = QtWidgets.QLineEdit(self.verticalLayoutWidget)
+        self.lineEdit_pasword.setObjectName("lineEdit_pasword")
+        self.verticalLayout.addWidget(self.lineEdit_pasword)
+        self.horizontalLayoutWidget = QtWidgets.QWidget(password_page)
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(20, 280, 371, 61))
+        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.reg_label = QtWidgets.QLabel(self.horizontalLayoutWidget)
+        self.reg_label.setObjectName("reg_label")
+        self.horizontalLayout.addWidget(self.reg_label)
+        self.reg_buttom = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.reg_buttom.setObjectName("reg_buttom")
+        self.horizontalLayout.addWidget(self.reg_buttom)
+        self.Button_login = QtWidgets.QPushButton(password_page)
+        self.Button_login.setGeometry(QtCore.QRect(490, 90, 161, 28))
+        self.Button_login.setObjectName("Button_login")
         self.check_label = QtWidgets.QLabel(password_page)
-        self.check_label.setGeometry(QtCore.QRect(430, 140, 191, 61))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.check_label.setFont(font)
+        self.check_label.setGeometry(QtCore.QRect(490, 150, 161, 31))
+        self.check_label.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.check_label.setText("")
         self.check_label.setObjectName("check_label")
+        self.label = QtWidgets.QLabel(password_page)
+        self.label.setGeometry(QtCore.QRect(470, 220, 191, 71))
+        font = QtGui.QFont()
+        font.setPointSize(8)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.help_but = QtWidgets.QPushButton(password_page)
+        self.help_but.setGeometry(QtCore.QRect(480, 310, 181, 31))
+        self.help_but.setObjectName("help_but")
 
         self.retranslateUi(password_page)
         QtCore.QMetaObject.connectSlotsByName(password_page)
 
     def retranslateUi(self, password_page):
         _translate = QtCore.QCoreApplication.translate
-        password_page.setWindowTitle(_translate("password_page", "Form"))
+        password_page.setWindowTitle(_translate("password_page", "Изменение пароля"))
         self.label_login.setText(_translate("password_page", "Логин:"))
         self.label_password.setText(_translate("password_page", "Пароль:"))
-        self.Button_login.setText(_translate("password_page", "Вход"))
-        self.label.setText(_translate("password_page", "Впервые здесь?"))
+        self.reg_label.setText(_translate("password_page", "Впервые здесь?"))
         self.reg_buttom.setText(_translate("password_page", "Зарегестрируйтесь!"))
+        self.Button_login.setText(_translate("password_page", "Вход"))
+        self.label.setText(_translate("password_page", "<html><head/><body><p align=\"center\">Оказались в опасной ситуации?</p><p align=\"center\">Потерялись?</p><p align=\"center\">Не знаете что вам делать?</p></body></html>"))
+        self.help_but.setText(_translate("password_page", "Мы поможем!"))
+
 
 
 class Ui_reg_page(object):
@@ -512,9 +515,10 @@ class Password_form(QMainWindow, Ui_password_page):
         super().__init__()
         self.setupUi(self)
         self.setWindowTitle('Вход')
-        QWidget.setFixedSize(self, 633, 364)
+        QWidget.setFixedSize(self, 678, 361)
         self.Button_login.clicked.connect(self.run)
         self.reg_buttom.clicked.connect(self.registr)
+        self.help_but.clicked.connect(self.help)
 
     def run(self):
         global form3
@@ -527,9 +531,12 @@ class Password_form(QMainWindow, Ui_password_page):
         if self.lineEdit_login.text() in logins:
             password = cur.execute(
                 f"""SELECT password, id_user FROM user_info where login = '{self.lineEdit_login.text()}'""").fetchall()
-            if self.lineEdit_password.text() == password[0][0]:
+            if self.lineEdit_pasword.text() == password[0][0]:
                 form3 = Main_window(password[0][-1])
-
+                global form4
+                form4 = Help_window(1)
+                global form4_4
+                form4_4 = Help_window4_result(1)
                 form1.hide()
                 form3.show()
                 con.close()
@@ -545,6 +552,11 @@ class Password_form(QMainWindow, Ui_password_page):
         form1.hide()
         form2.show()
 
+    def help(self):
+        global form4
+        form4 = Help_window(0)
+        form1.hide()
+        form4.show()
 
 class Regist_window(QMainWindow, Ui_reg_page):
     def __init__(self):
@@ -725,27 +737,32 @@ class Swap_password(QMainWindow, Ui_Swap_password_window):
 
 
 class Help_window(QMainWindow, Ui_Help_window):
-    def __init__(self):
+    def __init__(self, reg):
         super().__init__()
+        self.reg = reg
         self.setupUi(self)
         QWidget.setFixedSize(self, 475, 496)
         self.next_but.clicked.connect(self.run)
 
     def run(self):
         global form4_1_1
+        global form4_1
+        global form4_4
         if self.question_radiob1.isChecked():
+            form4_1 = Help_window1(self.reg)
             form4_1.show()
             form4.hide()
         #
         elif self.question_radiob2.isChecked():
-            form4_1_1 = Help_window1_result1(3)
+            form4_1_1 = Help_window1_result1(3, self.reg)
             form4_1_1.show()
             form4.hide()
         elif self.question_radiob3.isChecked():
-            form4_1_1 = Help_window1_result1(4)
+            form4_1_1 = Help_window1_result1(4, self.reg)
             form4_1_1.show()
             form4.hide()
         elif self.question_radiob4.isChecked():
+            form4_4 = Help_window4_result(self.reg)
             form4_4.show()
             form4.hide()
 
@@ -754,27 +771,29 @@ class Help_window(QMainWindow, Ui_Help_window):
 
 
 class Help_window1(QMainWindow, Ui_Help_window1):
-    def __init__(self):
+    def __init__(self, reg):
         super().__init__()
         self.setupUi(self)
+        self.reg = reg
         QWidget.setFixedSize(self, 475, 496)
         self.next_but.clicked.connect(self.run)
 
     def run(self):
         global form4_1_1
         if self.question_radiob1.isChecked():
-            form4_1_1 = Help_window1_result1(1)
+            form4_1_1 = Help_window1_result1(1, self.reg)
             form4_1_1.show()
             form4_1.hide()
         elif self.question_radiob2.isChecked():
-            form4_1_1 = Help_window1_result1(2)
+            form4_1_1 = Help_window1_result1(2, self.reg)
             form4_1_1.show()
             form4_1.hide()
 
 
 class Help_window1_result1(QMainWindow, Ui_Help_window1_1):
-    def __init__(self, count):
+    def __init__(self, count, reg):
         super().__init__()
+        self.reg = reg
         self.setupUi(self)
         self.count = count
         QWidget.setFixedSize(self, 593, 564)
@@ -832,13 +851,18 @@ class Help_window1_result1(QMainWindow, Ui_Help_window1_1):
             con.close()
 
     def back(self):
-        form4_1_1.hide()
-        form3.show()
+        if self.reg == 0:
+            form4_1_1.hide()
+            form1.show()
+        else:
+            form4_1_1.hide()
+            form3.show()
 
 
 class Help_window4_result(QMainWindow, Ui_Help_window2):
-    def __init__(self):
+    def __init__(self, reg):
         super().__init__()
+        self.reg = reg
         self.setupUi(self)
         QWidget.setFixedSize(self, 475, 496)
         self.next_button.clicked.connect(self.run)
@@ -846,19 +870,19 @@ class Help_window4_result(QMainWindow, Ui_Help_window2):
     def run(self):
         global form4_1_1
         if self.question_radiob1.isChecked():
-            form4_1_1 = Help_window1_result1(5)
+            form4_1_1 = Help_window1_result1(5, self.reg)
             form4_1_1.show()
             form4_4.hide()
         elif self.question_radiob2.isChecked():
-            form4_1_1 = Help_window1_result1(6)
+            form4_1_1 = Help_window1_result1(6, self.reg)
             form4_1_1.show()
             form4_4.hide()
         elif self.question_radiob3.isChecked():
-            form4_1_1 = Help_window1_result1(7)
+            form4_1_1 = Help_window1_result1(7, self.reg)
             form4_1_1.show()
             form4_4.hide()
         elif self.question_radiob4.isChecked():
-            form4_1_1 = Help_window1_result1(8)
+            form4_1_1 = Help_window1_result1(8, self.reg)
             form4_1_1.show()
             form4_4.hide()
 
@@ -871,7 +895,6 @@ def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)
 
 
-user = 'a'
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     form1 = Password_form()
@@ -879,10 +902,10 @@ if __name__ == '__main__':
     form3 = Main_window(1)
     form3_1 = Main_window_user(1)
     form3_2 = Swap_password(1)
-    form4 = Help_window()
-    form4_1 = Help_window1()
-    form4_1_1 = Help_window1_result1(3)
-    form4_4 = Help_window4_result()
+    form4 = Help_window(0)
+    form4_1 = Help_window1(0)
+    form4_1_1 = Help_window1_result1(3, 0)
+    form4_4 = Help_window4_result(0)
     form1.show()
     sys.excepthook = except_hook
     sys.exit(app.exec_())
