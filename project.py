@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_password_page(object):
+class Ui_password_page(object):      # создаю дизайн для окна "password_page"
     def setupUi(self, password_page):
         password_page.setObjectName("password_page")
         password_page.resize(678, 361)
@@ -82,7 +82,7 @@ class Ui_password_page(object):
 
 
 
-class Ui_reg_page(object):
+class Ui_reg_page(object):     # создаю дизайн для окна "reg_page"
     def setupUi(self, reg_page):
         reg_page.setObjectName("reg_page")
         reg_page.resize(546, 440)
@@ -167,7 +167,7 @@ class Ui_reg_page(object):
         self.reg_Button.setText(_translate("reg_page", "Зарегестрироваться"))
 
 
-class Ui_main_window(object):
+class Ui_main_window(object):   # создаю дизайн для окна "main_window"
     def setupUi(self, main_window):
         main_window.setObjectName("main_window")
         main_window.resize(609, 410)
@@ -211,7 +211,7 @@ class Ui_main_window(object):
                                            " style=\" font-size:12pt;\">Не знаете что вам делать?</span></p></body></html>"))
 
 
-class Ui_main_window_user(object):
+class Ui_main_window_user(object):   # создаю дизайн для окна "main_window_user"
     def setupUi(self, main_window_user):
         main_window_user.setObjectName("main_window_user")
         main_window_user.resize(679, 434)
@@ -271,7 +271,7 @@ class Ui_main_window_user(object):
         self.back_buttom.setText(_translate("main_window_user", "<-- Назад"))
 
 
-class Ui_Swap_password_window(object):
+class Ui_Swap_password_window(object):     # создаю дизайн для окна "Swap_password_window"
     def setupUi(self, Swap_password_window):
         Swap_password_window.setObjectName("Swap_password_window")
         Swap_password_window.resize(340, 480)
@@ -340,7 +340,7 @@ class Ui_Swap_password_window(object):
             _translate("Swap_password_window", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
 
 
-class Ui_Help_window(object):
+class Ui_Help_window(object):   # создаю дизайн для окна "Help_window"
     def setupUi(self, Help_window):
         Help_window.setObjectName("Help_window")
         Help_window.resize(475, 496)
@@ -392,7 +392,7 @@ class Ui_Help_window(object):
         self.next_but.setText(_translate("Help_window", "Дальше"))
 
 
-class Ui_Help_window1(object):
+class Ui_Help_window1(object):   # создаю дизайн для окна "Help_window1"
     def setupUi(self, Help_window1):
         Help_window1.setObjectName("Help_window1")
         Help_window1.resize(475, 496)
@@ -436,7 +436,7 @@ class Ui_Help_window1(object):
         self.next_but.setText(_translate("Help_window1", "Дальше"))
 
 
-class Ui_Help_window1_1(object):
+class Ui_Help_window1_1(object):   # создаю дизайн для окна "Help_window1_1"
     def setupUi(self, Help_window1_1):
         Help_window1_1.setObjectName("Help_window1_1")
         Help_window1_1.setEnabled(True)
@@ -462,7 +462,7 @@ class Ui_Help_window1_1(object):
         self.return_but.setText(_translate("Help_window1_1", "Вернуться на главную страницу"))
 
 
-class Ui_Help_window2(object):
+class Ui_Help_window2(object):  # создаю дизайн для окна "Help_window2"
     def setupUi(self, Help_window2):
         Help_window2.setObjectName("Help_window2")
         Help_window2.resize(475, 496)
@@ -510,53 +510,135 @@ class Ui_Help_window2(object):
         self.next_button.setText(_translate("Help_window2", "Далее"))
 
 
-class Password_form(QMainWindow, Ui_password_page):
+class Ui_Teach_window(object):
+    def setupUi(self, Teach_window):
+        Teach_window.setObjectName("Teach_window")
+        Teach_window.resize(398, 469)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        Teach_window.setFont(font)
+        self.verticalLayoutWidget = QtWidgets.QWidget(Teach_window)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(30, 20, 331, 381))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 50)
+        self.verticalLayout.setSpacing(59)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.text_label = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.text_label.setObjectName("text_label")
+        self.verticalLayout.addWidget(self.text_label)
+        self.theme1 = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.theme1.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.theme1.setObjectName("theme1")
+        self.verticalLayout.addWidget(self.theme1)
+        self.theme2 = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.theme2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.theme2.setObjectName("theme2")
+        self.verticalLayout.addWidget(self.theme2)
+        self.theme3 = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.theme3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.theme3.setObjectName("theme3")
+        self.verticalLayout.addWidget(self.theme3)
+        self.back_but = QtWidgets.QPushButton(Teach_window)
+        self.back_but.setGeometry(QtCore.QRect(120, 420, 141, 31))
+        self.back_but.setObjectName("back_but")
+
+        self.retranslateUi(Teach_window)
+        QtCore.QMetaObject.connectSlotsByName(Teach_window)
+
+    def retranslateUi(self, Teach_window):
+        _translate = QtCore.QCoreApplication.translate
+        Teach_window.setWindowTitle(_translate("Teach_window", "Темы"))
+        self.text_label.setText(_translate("Teach_window", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Выберете тему:</span></p></body></html>"))
+        self.theme1.setText(_translate("Teach_window", "Первая медецинская помощь"))
+        self.theme2.setText(_translate("Teach_window", "Обязанности пешехода"))
+        self.theme3.setText(_translate("Teach_window", "Пожар в доме"))
+        self.back_but.setText(_translate("Teach_window", "<-- Назад"))
+
+
+class Ui_Theme(object):
+    def setupUi(self, Theme):
+        Theme.setObjectName("Theme")
+        Theme.resize(713, 553)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        Theme.setFont(font)
+        self.textEdit_themes = QtWidgets.QTextEdit(Theme)
+        self.textEdit_themes.setGeometry(QtCore.QRect(0, 0, 711, 451))
+        self.textEdit_themes.setObjectName("textEdit_themes")
+        self.horizontalLayoutWidget = QtWidgets.QWidget(Theme)
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(170, 460, 401, 80))
+        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.back_but = QtWidgets.QPushButton(self.horizontalLayoutWidget)
+        self.back_but.setObjectName("back_but")
+        self.horizontalLayout.addWidget(self.back_but)
+        self.test_but = QtWidgets.QPushButton(self.horizontalLayoutWidget)
+        self.test_but.setObjectName("test_but")
+        self.horizontalLayout.addWidget(self.test_but)
+
+        self.retranslateUi(Theme)
+        QtCore.QMetaObject.connectSlotsByName(Theme)
+
+    def retranslateUi(self, Theme):
+        _translate = QtCore.QCoreApplication.translate
+        Theme.setWindowTitle(_translate("Theme", "Тема"))
+        self.back_but.setText(_translate("Theme", "<-- Назад"))
+        self.test_but.setText(_translate("Theme", "Пройти тест"))
+
+
+
+
+class Password_form(QMainWindow, Ui_password_page):   #  создаю первое окно с возможностью регистрацииБ входа в приложение и быстрой помощью
     def __init__(self):
         super().__init__()
-        self.setupUi(self)
-        self.setWindowTitle('Вход')
-        QWidget.setFixedSize(self, 678, 361)
-        self.Button_login.clicked.connect(self.run)
-        self.reg_buttom.clicked.connect(self.registr)
-        self.help_but.clicked.connect(self.help)
+        self.setupUi(self)    # загружаю дизайн
+        self.setWindowTitle('Вход')    # меняю название окна
+        QWidget.setFixedSize(self, 678, 361)    # фиксирую размер окна
+        self.Button_login.clicked.connect(self.run)   # присоединяю кнопку к функции 'run'
+        self.reg_buttom.clicked.connect(self.registr)  # присоединяю кнопку к функции 'registr'
+        self.help_but.clicked.connect(self.help)   # присоединяю кнопку к функции 'help'
 
     def run(self):
         global form3
-        con = sqlite3.connect("info.sqlite")
+        con = sqlite3.connect("info.sqlite")   # подключаюсь к базе данных
         cur = con.cursor()
-        result = cur.execute("""SELECT login FROM user_info""").fetchall()
+        result = cur.execute("""SELECT login FROM user_info""").fetchall()   # собираю все логины которые есть
         logins = []
         for elem in result:
             logins.append(elem[0])
-        if self.lineEdit_login.text() in logins:
+        if self.lineEdit_login.text() in logins:  # проверяю есть ли логин вписанный пользователем ву БД
             password = cur.execute(
-                f"""SELECT password, id_user FROM user_info where login = '{self.lineEdit_login.text()}'""").fetchall()
+                f"""SELECT password, id_user FROM user_info where login = '{self.lineEdit_login.text()}'""").fetchall()  # проверяю пароль и забираю id_user для корректного отражение в личном кабинете
             if self.lineEdit_pasword.text() == password[0][0]:
                 form3 = Main_window(password[0][-1])
                 global form4
                 form4 = Help_window(1)
                 global form4_4
                 form4_4 = Help_window4_result(1)
-                form1.hide()
-                form3.show()
+                form1.hide()  # закрываю окно
+                form3.show()  # открываю основное (main_window) окно
                 con.close()
             else:
-                self.check_label.setText('Ошибка')
+                self.check_label.setText('Ошибка')  # оишбка если не совпадает пароль
                 con.close()
         else:
-            self.check_label.setText('Ошибка!')
+            self.check_label.setText('Ошибка!')  # ошибка если ни один из логинов не совпадает
             con.close()
         con.close()
 
     def registr(self):
-        form1.hide()
+        form1.hide()  # перевожу пользователя на окно для регистрации
         form2.show()
 
     def help(self):
-        global form4
-        form4 = Help_window(0)
+        global form4  # перевожу пользователя на окно с быстрой помощью
+        form4 = Help_window(0) # передаю значение 0, чтобы по выходу из совета пользователя перекинуло на окно входа в аккаунт, а не в main
         form1.hide()
         form4.show()
+
 
 class Regist_window(QMainWindow, Ui_reg_page):
     def __init__(self):
@@ -567,19 +649,22 @@ class Regist_window(QMainWindow, Ui_reg_page):
         self.reg_Button.clicked.connect(self.run)
 
     def run(self):
-        if self.lineEdit_login.text() == '':
+        if self.lineEdit_login.text() == '':  # проверю чтобы поле логина было не пустым, иначе ошибка
             self.error_label.setText(
                 "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Заполните поле для логина!<br/></span></p></body></html>")
-        elif self.lineEdit_password.text() == '':
+        elif self.lineEdit_password.text() == '':  # проверю чтобы поле пароля было не пустым, иначе ошибка
             self.error_label.setText(
                 "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Заполните поле для пароля!<br/></span></p></body></html>")
-        elif self.lineEdit_name_user.text() == '':
+        elif self.lineEdit_name_user.text() == '':  # проверю чтобы поле имени было не пустым, иначе ошибка
             self.error_label.setText(
                 "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Заполните поле для имени!<br/></span></p></body></html>")
-        if len(self.lineEdit_password.text()) > 7:
-            count_upper = 0
-            count_lowwer = 0
-            count_numbers = 0
+        elif len(self.lineEdit_password.text()) < 8:  # проверю чтобы длинну пароля было не пустым, иначе ошибка
+            self.error_label.setText(
+                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должно содержаться больше 7 символов!<br/></span></p></body></html>")
+        if len(self.lineEdit_password.text()) > 7:  # если длинна пароля больше 7 символов, то проверяю пароль на различные символы, если не выполняется минимальный критерий - ошибка
+            count_upper = 0  # проверка чтобы хотя бы 1 символ был заглавной буквой
+            count_lowwer = 0  # проверка чтобы хотя бы 1 символ был строчной буквой
+            count_numbers = 0  # проверка чтобы хотя бы 1 символ был цифрой
             for i in self.lineEdit_password.text():
                 if i in '1234567890':
                     count_numbers += 1
@@ -591,12 +676,15 @@ class Regist_window(QMainWindow, Ui_reg_page):
                     self.error_label.setText(
                         "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть только цифры и буквы!<br/></span></p></body></html>")
                     break
-            con = sqlite3.connect("info.sqlite")
+            con = sqlite3.connect("info.sqlite")  # подключаюсь к БД
             cur = con.cursor()
-            result = cur.execute("""SELECT login FROM user_info""").fetchall()
+            result = cur.execute("""SELECT login, id_user FROM user_info""").fetchall()  # беру
             logins = []
+            ids = []
             for elem in result:
                 logins.append(elem[0])
+                ids.append(elem[1])
+            ids = max(ids) + 1
             if count_upper == 0:
                 self.error_label.setText(
                     "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть заглавные буквы!<br/></span></p></body></html>")
@@ -612,11 +700,11 @@ class Regist_window(QMainWindow, Ui_reg_page):
             else:
                 global form3
                 inf = cur.execute(
-                    f"""INSERT INTO user_info(login, password, username, score) VALUES('{self.lineEdit_login.text()}',
+                    f"""INSERT INTO user_info(id_user, login, password, username, score) VALUES('{str(ids)}', '{self.lineEdit_login.text()}',
                      '{self.lineEdit_password.text()}', '{self.lineEdit_name_user.text()}', '0')""")
                 con.commit()
                 result = cur.execute("""SELECT id_user FROM user_info""").fetchall()
-                result = result[0][0]
+                result = result[0][-1]
                 con.close()
                 form2.hide()
                 form3 = Main_window(result)
@@ -632,6 +720,7 @@ class Main_window(QMainWindow, Ui_main_window):
         QWidget.setFixedSize(self, 609, 410)
         self.user_buttom.clicked.connect(self.run)
         self.help_button.clicked.connect(self.open_help_win)
+        self.read_Button.clicked.connect(self.read)
 
     def run(self):
         global form3_1
@@ -642,6 +731,10 @@ class Main_window(QMainWindow, Ui_main_window):
     def open_help_win(self):
         form4.show()
         form3.hide()
+
+    def read(self):
+        form3.hide()
+        form5.show()
 
 
 class Main_window_user(QMainWindow, Ui_main_window_user):
@@ -654,12 +747,13 @@ class Main_window_user(QMainWindow, Ui_main_window_user):
         self.back_buttom.clicked.connect(self.back)
         con = sqlite3.connect("info.sqlite")
         cur = con.cursor()
-        info = cur.execute(f"""SELECT login, username FROM user_info
+        info = cur.execute(f"""SELECT login, username, score FROM user_info
                                             WHERE id_user = {id}""").fetchall()
         con.close()
         info = info[0]
         self.login.setText(str(info[0]))
         self.username.setText(str(info[1]))
+        self.count.setText(str(info[2]))
 
     def run(self):
         global form3_2
@@ -887,8 +981,39 @@ class Help_window4_result(QMainWindow, Ui_Help_window2):
             form4_4.hide()
 
 
-class Teach_window(QMainWindow, ):
-    pass
+class Teach_window(QMainWindow, Ui_Teach_window):
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
+        QWidget.setFixedSize(self, 398, 469)
+        self.back_but.clicked.connect(self.back)
+        self.theme1.clicked.connect(self.theme, 1)
+        self.theme2.clicked.connect(self.theme, 2)
+        self.theme3.clicked.connect(self.theme, 3)
+
+    def back(self):
+        form5.hide()
+        form3.show()
+
+    def theme(self, count):
+        global form5_1
+        form5_1 = Theme(count)
+        form5_1.show()
+        form5.hide()
+
+
+class Theme(QMainWindow, Ui_Theme):
+    def __init__(self, id):
+        super().__init__()
+        self.setupUi(self)
+        QWidget.setFixedSize(self, 713, 553)
+        self.back_but.clicked.connect(self.back)
+        self.id = id
+
+    def back(self):
+        form5_1.hide()
+        form5.show()
+
 
 
 def except_hook(cls, exception, traceback):
@@ -906,6 +1031,8 @@ if __name__ == '__main__':
     form4_1 = Help_window1(0)
     form4_1_1 = Help_window1_result1(3, 0)
     form4_4 = Help_window4_result(0)
+    form5 = Teach_window()
+    form5_1 = Theme(0)
     form1.show()
     sys.excepthook = except_hook
     sys.exit(app.exec_())
