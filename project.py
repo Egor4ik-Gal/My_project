@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_password_page(object):      # создаю дизайн для окна "password_page"
+class Ui_password_page(object):  # создаю дизайн для окна "password_page"
     def setupUi(self, password_page):
         password_page.setObjectName("password_page")
         password_page.resize(678, 361)
@@ -77,12 +77,12 @@ class Ui_password_page(object):      # создаю дизайн для окна
         self.reg_label.setText(_translate("password_page", "Впервые здесь?"))
         self.reg_buttom.setText(_translate("password_page", "Зарегестрируйтесь!"))
         self.Button_login.setText(_translate("password_page", "Вход"))
-        self.label.setText(_translate("password_page", "<html><head/><body><p align=\"center\">Оказались в опасной ситуации?</p><p align=\"center\">Потерялись?</p><p align=\"center\">Не знаете что вам делать?</p></body></html>"))
+        self.label.setText(_translate("password_page",
+                                      "<html><head/><body><p align=\"center\">Оказались в опасной ситуации?</p><p align=\"center\">Потерялись?</p><p align=\"center\">Не знаете что вам делать?</p></body></html>"))
         self.help_but.setText(_translate("password_page", "Мы поможем!"))
 
 
-
-class Ui_reg_page(object):     # создаю дизайн для окна "reg_page"
+class Ui_reg_page(object):  # создаю дизайн для окна "reg_page"
     def setupUi(self, reg_page):
         reg_page.setObjectName("reg_page")
         reg_page.resize(546, 440)
@@ -167,7 +167,7 @@ class Ui_reg_page(object):     # создаю дизайн для окна "reg_
         self.reg_Button.setText(_translate("reg_page", "Зарегестрироваться"))
 
 
-class Ui_main_window(object):   # создаю дизайн для окна "main_window"
+class Ui_main_window(object):  # создаю дизайн для окна "main_window"
     def setupUi(self, main_window):
         main_window.setObjectName("main_window")
         main_window.resize(609, 410)
@@ -211,7 +211,7 @@ class Ui_main_window(object):   # создаю дизайн для окна "mai
                                            " style=\" font-size:12pt;\">Не знаете что вам делать?</span></p></body></html>"))
 
 
-class Ui_main_window_user(object):   # создаю дизайн для окна "main_window_user"
+class Ui_main_window_user(object):  # создаю дизайн для окна "main_window_user"
     def setupUi(self, main_window_user):
         main_window_user.setObjectName("main_window_user")
         main_window_user.resize(679, 434)
@@ -271,7 +271,7 @@ class Ui_main_window_user(object):   # создаю дизайн для окна
         self.back_buttom.setText(_translate("main_window_user", "<-- Назад"))
 
 
-class Ui_Swap_password_window(object):     # создаю дизайн для окна "Swap_password_window"
+class Ui_Swap_password_window(object):  # создаю дизайн для окна "Swap_password_window"
     def setupUi(self, Swap_password_window):
         Swap_password_window.setObjectName("Swap_password_window")
         Swap_password_window.resize(340, 480)
@@ -340,7 +340,7 @@ class Ui_Swap_password_window(object):     # создаю дизайн для о
             _translate("Swap_password_window", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
 
 
-class Ui_Help_window(object):   # создаю дизайн для окна "Help_window"
+class Ui_Help_window(object):  # создаю дизайн для окна "Help_window"
     def setupUi(self, Help_window):
         Help_window.setObjectName("Help_window")
         Help_window.resize(475, 496)
@@ -392,7 +392,7 @@ class Ui_Help_window(object):   # создаю дизайн для окна "Hel
         self.next_but.setText(_translate("Help_window", "Дальше"))
 
 
-class Ui_Help_window1(object):   # создаю дизайн для окна "Help_window1"
+class Ui_Help_window1(object):  # создаю дизайн для окна "Help_window1"
     def setupUi(self, Help_window1):
         Help_window1.setObjectName("Help_window1")
         Help_window1.resize(475, 496)
@@ -436,7 +436,7 @@ class Ui_Help_window1(object):   # создаю дизайн для окна "He
         self.next_but.setText(_translate("Help_window1", "Дальше"))
 
 
-class Ui_Help_window1_1(object):   # создаю дизайн для окна "Help_window1_1"
+class Ui_Help_window1_1(object):  # создаю дизайн для окна "Help_window1_1"
     def setupUi(self, Help_window1_1):
         Help_window1_1.setObjectName("Help_window1_1")
         Help_window1_1.setEnabled(True)
@@ -549,7 +549,8 @@ class Ui_Teach_window(object):  # создаю дизайн для окна "Tea
     def retranslateUi(self, Teach_window):
         _translate = QtCore.QCoreApplication.translate
         Teach_window.setWindowTitle(_translate("Teach_window", "Темы"))
-        self.text_label.setText(_translate("Teach_window", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Выберете тему:</span></p></body></html>"))
+        self.text_label.setText(_translate("Teach_window",
+                                           "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Выберете тему:</span></p></body></html>"))
         self.theme1.setText(_translate("Teach_window", "Первая медицинская помощь"))
         self.theme2.setText(_translate("Teach_window", "Обязанности пешехода"))
         self.theme3.setText(_translate("Teach_window", "Пожар в доме"))
@@ -625,9 +626,9 @@ class Ui_test_win(object):  # создаю дизайн для окна "Test_wi
     def retranslateUi(self, test_win):
         _translate = QtCore.QCoreApplication.translate
         test_win.setWindowTitle(_translate("test_win", "Тест"))
-        self.label_timer.setText(_translate("test_win", "<html><head/><body><p align=\"center\">00:00:00<br/></p></body></html>"))
+        self.label_timer.setText(
+            _translate("test_win", "<html><head/><body><p align=\"center\">00:00:00<br/></p></body></html>"))
         self.pushButton_answer.setText(_translate("test_win", "Завершить"))
-
 
 
 class Ui_answer(object):  # создаю дизайн для окна "answer"
@@ -661,24 +662,26 @@ class Ui_answer(object):  # создаю дизайн для окна "answer"
         answer.setWindowTitle(_translate("answer", "Ответ"))
         self.back_but.setText(_translate("answer", "Вернуться на главную"))
         self.back_but_read.setText(_translate("answer", "Ввернуться в учебник"))
-        self.label_answer.setText(_translate("answer", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt;\">Вы правильно решили все задания!</span></p><p align=\"center\"><span style=\" font-size:16pt;\">Вы получили 3 балла</span></p><p align=\"center\"><span style=\" font-size:16pt;\">Вы потратили на тест $</span></p></body></html>"))
+        self.label_answer.setText(_translate("answer",
+                                             "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt;\">Вы правильно решили все задания!</span></p><p align=\"center\"><span style=\" font-size:16pt;\">Вы получили 3 балла</span></p><p align=\"center\"><span style=\" font-size:16pt;\">Вы потратили на тест $</span></p></body></html>"))
 
 
-class Password_form(QMainWindow, Ui_password_page):   #  создаю первое окно с возможностью регистрацииБ входа в приложение и быстрой помощью
+class Password_form(QMainWindow,
+                    Ui_password_page):  # создаю первое окно с возможностью регистрацииБ входа в приложение и быстрой помощью
     def __init__(self):
         super().__init__()
-        self.setupUi(self)    # загружаю дизайн
-        self.setWindowTitle('Вход')    # меняю название окна
-        QWidget.setFixedSize(self, 678, 361)    # фиксирую размер окна
-        self.Button_login.clicked.connect(self.run)   # присоединяю кнопку к функции 'run'
+        self.setupUi(self)  # загружаю дизайн
+        self.setWindowTitle('Вход')  # меняю название окна
+        QWidget.setFixedSize(self, 678, 361)  # фиксирую размер окна
+        self.Button_login.clicked.connect(self.run)  # присоединяю кнопку к функции 'run'
         self.reg_buttom.clicked.connect(self.registr)  # присоединяю кнопку к функции 'registr'
-        self.help_but.clicked.connect(self.help)   # присоединяю кнопку к функции 'help'
+        self.help_but.clicked.connect(self.help)  # присоединяю кнопку к функции 'help'
 
     def run(self):
         global form3
-        con = sqlite3.connect("info.sqlite")   # подключаюсь к базе данных
+        con = sqlite3.connect("info.sqlite")  # подключаюсь к базе данных
         cur = con.cursor()
-        result = cur.execute("""SELECT login FROM user_info""").fetchall()   # собираю все логины которые есть
+        result = cur.execute("""SELECT login FROM user_info""").fetchall()  # собираю все логины которые есть
         logins = []
         for elem in result:
             logins.append(elem[0])
@@ -710,7 +713,8 @@ class Password_form(QMainWindow, Ui_password_page):   #  создаю перво
 
     def help(self):
         global form4  # перевожу пользователя на окно с быстрой помощью
-        form4 = Help_window(0)  # передаю значение 0, чтобы по выходу из совета пользователя перекинуло на окно входа в аккаунт, а не в main
+        form4 = Help_window(
+            0)  # передаю значение 0, чтобы по выходу из совета пользователя перекинуло на окно входа в аккаунт, а не в main
         form1.hide()
         form4.show()
 
@@ -795,11 +799,12 @@ class Main_window(QMainWindow, Ui_main_window):  # создаю Main_window
         self.setupUi(self)
         self.setWindowTitle('Главное окно')
         QWidget.setFixedSize(self, 609, 410)
-        self.user_buttom.clicked.connect(self.run)            #
+        self.user_buttom.clicked.connect(self.run)  #
         self.help_button.clicked.connect(self.open_help_win)  # привязываю кнопки
-        self.read_Button.clicked.connect(self.read)           #
+        self.read_Button.clicked.connect(self.read)  #
         global form5_3
-        form5_3 = Answer_win(0, '00:00:00', self.id)  # передаю в class Answer_win: 1. id темы, 2. время прохождения теста, 3. id_user
+        form5_3 = Answer_win(0, '00:00:00',
+                             self.id)  # передаю в class Answer_win: 1. id темы, 2. время прохождения теста, 3. id_user
 
     def run(self):
         global form3_1
@@ -830,9 +835,9 @@ class Main_window_user(QMainWindow, Ui_main_window_user):  # сощдаю class 
                                             WHERE id_user = {id}""").fetchall()  # получаю информацию о пользователе
         con.close()
         info = info[0]
-        self.login.setText(str(info[0]))     #
+        self.login.setText(str(info[0]))  #
         self.username.setText(str(info[1]))  # вывожу информацию в различные labels
-        self.count.setText(str(info[2]))     #
+        self.count.setText(str(info[2]))  #
 
     def run(self):
         global form3_2
@@ -1060,7 +1065,7 @@ class Teach_window(QMainWindow, Ui_Teach_window):  # создаю class Teach_wi
         super().__init__()
         self.setupUi(self)
         QWidget.setFixedSize(self, 398, 469)
-        self.back_but.clicked.connect(self.back)    #
+        self.back_but.clicked.connect(self.back)  #
         self.theme1.clicked.connect(self.theme1_1)  # конекчу кнопки
         self.theme2.clicked.connect(self.theme2_1)  #
         self.theme3.clicked.connect(self.theme3_1)  #
@@ -1153,7 +1158,8 @@ class Test_win(QMainWindow, Ui_test_win):  # создаю class Test_win
             result = result[0]
             with open(result[0], 'r', encoding='utf8') as f:
                 data = f.read()
-                self.answer = data[-3:]  # вывожу весь текст кроме последних 3 символов, т.к. последнии 3 символа это ответ
+                self.answer = data[
+                              -3:]  # вывожу весь текст кроме последних 3 символов, т.к. последнии 3 символа это ответ
                 self.textEdit_question.setText(data[:-3])
             con.close()
         elif self.id == 2:
@@ -1183,15 +1189,18 @@ class Test_win(QMainWindow, Ui_test_win):  # создаю class Test_win
                 form5_3 = Answer_win(0, self.time.toString('hh:mm:ss'), id_user)
                 form5_2.hide()
                 form5_3.show()
-            elif self.lineEdit_answer.text()[1] == '2' and self.lineEdit_answer.text()[0] != '3' and self.lineEdit_answer.text()[2] != '1':
+            elif self.lineEdit_answer.text()[1] == '2' and self.lineEdit_answer.text()[0] != '3' and \
+                    self.lineEdit_answer.text()[2] != '1':
                 form5_3 = Answer_win(1, self.time.toString('hh:mm:ss'), id_user)
                 form5_2.hide()
                 form5_3.show()
-            elif self.lineEdit_answer.text()[2] == '1' and self.lineEdit_answer.text()[0] != '3' and self.lineEdit_answer.text()[1] != '2':
+            elif self.lineEdit_answer.text()[2] == '1' and self.lineEdit_answer.text()[0] != '3' and \
+                    self.lineEdit_answer.text()[1] != '2':
                 form5_3 = Answer_win(1, self.time.toString('hh:mm:ss'), id_user)
                 form5_2.hide()
                 form5_3.show()
-            elif (self.lineEdit_answer.text()[:2] == '32') or (self.lineEdit_answer.text()[1:] == '21') or (self.lineEdit_answer.text()[0] == '3' and self.lineEdit_answer.text()[2] == '1'):
+            elif (self.lineEdit_answer.text()[:2] == '32') or (self.lineEdit_answer.text()[1:] == '21') or (
+                    self.lineEdit_answer.text()[0] == '3' and self.lineEdit_answer.text()[2] == '1'):
                 form5_3 = Answer_win(2, self.time.toString('hh:mm:ss'), id_user)
                 form5_2.hide()
                 form5_3.show()
@@ -1212,15 +1221,18 @@ class Test_win(QMainWindow, Ui_test_win):  # создаю class Test_win
                 form5_3 = Answer_win(0, self.time.toString('hh:mm:ss'), id_user)
                 form5_2.hide()
                 form5_3.show()
-            elif self.lineEdit_answer.text()[1] == '1' and self.lineEdit_answer.text()[0] != '1' and self.lineEdit_answer.text()[2] != '1':
+            elif self.lineEdit_answer.text()[1] == '1' and self.lineEdit_answer.text()[0] != '1' and \
+                    self.lineEdit_answer.text()[2] != '1':
                 form5_3 = Answer_win(1, self.time.toString('hh:mm:ss'), id_user)
                 form5_2.hide()
                 form5_3.show()
-            elif self.lineEdit_answer.text()[2] == '1' and self.lineEdit_answer.text()[0] != '1' and self.lineEdit_answer.text()[1] != '1':
+            elif self.lineEdit_answer.text()[2] == '1' and self.lineEdit_answer.text()[0] != '1' and \
+                    self.lineEdit_answer.text()[1] != '1':
                 form5_3 = Answer_win(1, self.time.toString('hh:mm:ss'), id_user)
                 form5_2.hide()
                 form5_3.show()
-            elif (self.lineEdit_answer.text()[:2] == '11') or (self.lineEdit_answer.text()[1:] == '11') or (self.lineEdit_answer.text()[0] == '1' and self.lineEdit_answer.text()[2] == '1'):
+            elif (self.lineEdit_answer.text()[:2] == '11') or (self.lineEdit_answer.text()[1:] == '11') or (
+                    self.lineEdit_answer.text()[0] == '1' and self.lineEdit_answer.text()[2] == '1'):
                 form5_3 = Answer_win(2, self.time.toString('hh:mm:ss'), id_user)
                 form5_2.hide()
                 form5_3.show()
@@ -1241,15 +1253,18 @@ class Test_win(QMainWindow, Ui_test_win):  # создаю class Test_win
                 form5_3 = Answer_win(0, self.time.toString('hh:mm:ss'), id_user)
                 form5_2.hide()
                 form5_3.show()
-            elif self.lineEdit_answer.text()[1] == '1' and self.lineEdit_answer.text()[0] != '2' and self.lineEdit_answer.text()[2] != '3':
+            elif self.lineEdit_answer.text()[1] == '1' and self.lineEdit_answer.text()[0] != '2' and \
+                    self.lineEdit_answer.text()[2] != '3':
                 form5_3 = Answer_win(1, self.time.toString('hh:mm:ss'), id_user)
                 form5_2.hide()
                 form5_3.show()
-            elif self.lineEdit_answer.text()[2] == '3' and self.lineEdit_answer.text()[0] != '2' and self.lineEdit_answer.text()[1] != '1':
+            elif self.lineEdit_answer.text()[2] == '3' and self.lineEdit_answer.text()[0] != '2' and \
+                    self.lineEdit_answer.text()[1] != '1':
                 form5_3 = Answer_win(1, self.time.toString('hh:mm:ss'), id_user)
                 form5_2.hide()
                 form5_3.show()
-            elif (self.lineEdit_answer.text()[:2] == '21') or (self.lineEdit_answer.text()[1:] == '13') or (self.lineEdit_answer.text()[0] == '2' and self.lineEdit_answer.text()[2] == '3'):
+            elif (self.lineEdit_answer.text()[:2] == '21') or (self.lineEdit_answer.text()[1:] == '13') or (
+                    self.lineEdit_answer.text()[0] == '2' and self.lineEdit_answer.text()[2] == '3'):
                 form5_3 = Answer_win(2, self.time.toString('hh:mm:ss'), id_user)
                 form5_2.hide()
                 form5_3.show()
@@ -1264,7 +1279,8 @@ class Test_win(QMainWindow, Ui_test_win):  # создаю class Test_win
 
     def timerEvent(self):
         self.time = self.time.addSecs(1)  # добавляю в таймер новую секунду
-        self.label_timer.setText(f"<html><head/><body><p align=\"center\">{self.time.toString('hh:mm:ss')}<br/></p></body></html>")
+        self.label_timer.setText(
+            f"<html><head/><body><p align=\"center\">{self.time.toString('hh:mm:ss')}<br/></p></body></html>")
 
 
 class Answer_win(QMainWindow, Ui_answer):
@@ -1275,14 +1291,16 @@ class Answer_win(QMainWindow, Ui_answer):
         super().__init__()
         self.setupUi(self)
         QWidget.setFixedSize(self, 475, 353)
-        result = self.label_answer.text().replace('3', f'{self.count}', 1).replace('$', f'{self.time}', 1)  # заменяю '3' на колчество баллов на баллы которые получил пользователь и заменяю '$' на время, затраченное пользователем
+        result = self.label_answer.text().replace('3', f'{self.count}', 1).replace('$', f'{self.time}',
+                                                                                   1)  # заменяю '3' на колчество баллов на баллы которые получил пользователь и заменяю '$' на время, затраченное пользователем
         if self.count == 1:
             result = result.replace('балла', 'балл', 1)  # если пользователь получил 1 балл, то меняеться окончание
         elif self.count == 0:
             result = result.replace('балла', 'баллов')  # если пользователь получил 0 баллов, то меняеться окончание
         con = sqlite3.connect("info.sqlite")
         cur = con.cursor()
-        result2 = cur.execute(f"""SELECT score FROM user_info WHERE id_user = '{self.id}'""").fetchall()  # получаю score пользователя
+        result2 = cur.execute(
+            f"""SELECT score FROM user_info WHERE id_user = '{self.id}'""").fetchall()  # получаю score пользователя
         score = result2[0][0]
         inf = cur.execute(
             f"""UPDATE user_info SET score = '{self.count + score}' where id_user = '{self.id}'""")  # обноваляю score  пользователя
