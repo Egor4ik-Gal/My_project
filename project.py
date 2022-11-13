@@ -211,15 +211,15 @@ class Ui_main_window(object):  # создаю дизайн для окна "main
                                            " style=\" font-size:12pt;\">Не знаете что вам делать?</span></p></body></html>"))
 
 
-class Ui_main_window_user(object):  # создаю дизайн для окна "main_window_user"
+class Ui_main_window_user(object):
     def setupUi(self, main_window_user):
         main_window_user.setObjectName("main_window_user")
-        main_window_user.resize(679, 434)
+        main_window_user.resize(681, 431)
         font = QtGui.QFont()
         font.setPointSize(12)
         main_window_user.setFont(font)
         self.verticalLayoutWidget = QtWidgets.QWidget(main_window_user)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(20, 10, 331, 361))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(20, 10, 311, 381))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -232,20 +232,27 @@ class Ui_main_window_user(object):  # создаю дизайн для окна 
         self.login.setObjectName("login")
         self.verticalLayout.addWidget(self.login)
         self.swap_password = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.swap_password.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.swap_password.setObjectName("swap_password")
         self.verticalLayout.addWidget(self.swap_password)
         self.name_label = QtWidgets.QLabel(self.verticalLayoutWidget)
         self.name_label.setObjectName("name_label")
         self.verticalLayout.addWidget(self.name_label)
         self.username = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.username.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.username.setText("")
         self.username.setObjectName("username")
         self.verticalLayout.addWidget(self.username)
+        self.back_buttom = QtWidgets.QPushButton(main_window_user)
+        self.back_buttom.setGeometry(QtCore.QRect(20, 390, 211, 31))
+        self.back_buttom.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.back_buttom.setObjectName("back_buttom")
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(main_window_user)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(360, 10, 311, 181))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(360, 10, 312, 211))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 4)
+        self.verticalLayout_2.setSpacing(7)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.count_label = QtWidgets.QLabel(self.verticalLayoutWidget_2)
         self.count_label.setObjectName("count_label")
@@ -254,9 +261,14 @@ class Ui_main_window_user(object):  # создаю дизайн для окна 
         self.count.setText("")
         self.count.setObjectName("count")
         self.verticalLayout_2.addWidget(self.count)
-        self.back_buttom = QtWidgets.QPushButton(main_window_user)
-        self.back_buttom.setGeometry(QtCore.QRect(20, 390, 211, 28))
-        self.back_buttom.setObjectName("back_buttom")
+        self.leave_but = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
+        self.leave_but.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.leave_but.setObjectName("leave_but")
+        self.verticalLayout_2.addWidget(self.leave_but)
+        self.origin = QtWidgets.QPushButton(main_window_user)
+        self.origin.setGeometry(QtCore.QRect(522, 390, 151, 28))
+        self.origin.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.origin.setObjectName("origin")
 
         self.retranslateUi(main_window_user)
         QtCore.QMetaObject.connectSlotsByName(main_window_user)
@@ -264,11 +276,14 @@ class Ui_main_window_user(object):  # создаю дизайн для окна 
     def retranslateUi(self, main_window_user):
         _translate = QtCore.QCoreApplication.translate
         main_window_user.setWindowTitle(_translate("main_window_user", "Личный кабинет"))
-        self.login_label.setText(_translate("main_window_user", "Логин:"))
+        self.login_label.setText(_translate("main_window_user", "Ваш логин:"))
         self.swap_password.setText(_translate("main_window_user", "Поменять пароль"))
         self.name_label.setText(_translate("main_window_user", "Ваше имя:"))
-        self.count_label.setText(_translate("main_window_user", "Количество правильных ответов:"))
         self.back_buttom.setText(_translate("main_window_user", "<-- Назад"))
+        self.count_label.setText(_translate("main_window_user", "Количество правильных ответов:"))
+        self.leave_but.setText(_translate("main_window_user", "Выйти из аккаунта"))
+        self.origin.setText(_translate("main_window_user", "Источники"))
+
 
 
 class Ui_Swap_password_window(object):  # создаю дизайн для окна "Swap_password_window"
@@ -666,6 +681,37 @@ class Ui_answer(object):  # создаю дизайн для окна "answer"
                                              "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt;\">Вы правильно решили все задания!</span></p><p align=\"center\"><span style=\" font-size:16pt;\">Вы получили 3 балла</span></p><p align=\"center\"><span style=\" font-size:16pt;\">Вы потратили на тест $</span></p></body></html>"))
 
 
+class Ui_origins_win(object):
+    def setupUi(self, origins_win):
+        origins_win.setObjectName("origins_win")
+        origins_win.setEnabled(True)
+        origins_win.resize(593, 564)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        origins_win.setFont(font)
+        self.origin_textEdit = QtWidgets.QTextEdit(origins_win)
+        self.origin_textEdit.setEnabled(True)
+        self.origin_textEdit.setGeometry(QtCore.QRect(0, 0, 591, 511))
+        self.origin_textEdit.setReadOnly(True)
+        self.origin_textEdit.setObjectName("origin_textEdit")
+        self.return_but = QtWidgets.QPushButton(origins_win)
+        self.return_but.setGeometry(QtCore.QRect(100, 520, 401, 31))
+        self.return_but.setObjectName("return_but")
+
+        self.retranslateUi(origins_win)
+        QtCore.QMetaObject.connectSlotsByName(origins_win)
+
+    def retranslateUi(self, origins_win):
+        _translate = QtCore.QCoreApplication.translate
+        origins_win.setWindowTitle(_translate("origins_win", "Источники"))
+        self.origin_textEdit.setHtml(_translate("origins_win", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:16px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;\"><br /></p></body></html>"))
+        self.return_but.setText(_translate("origins_win", "Вернуться в личный кабинет"))
+
+
 class Password_form(QMainWindow,
                     Ui_password_page):  # создаю первое окно с возможностью регистрацииБ входа в приложение и быстрой помощью
     def __init__(self):
@@ -699,6 +745,8 @@ class Password_form(QMainWindow,
                 form1.hide()  # закрываю окно
                 form3.show()  # открываю основное (main_window) окно
                 con.close()
+                self.lineEdit_login.setText('')
+                self.lineEdit_pasword.setText('')
             else:
                 self.check_label.setText('Ошибка')  # оишбка если не совпадает пароль
                 con.close()
@@ -783,7 +831,11 @@ class Regist_window(QMainWindow, Ui_reg_page):
                      '{self.lineEdit_password.text()}', '{self.lineEdit_name_user.text()}', '0')""")  # создаю нового пользователя в БД
                 con.commit()  # сохраняю изменения таблицы
                 result = cur.execute("""SELECT id_user FROM user_info""").fetchall()
-                result = result[0][-1]  # определяю id нового юзера и запоминаю его
+                list_id = []
+                for elem in result:
+                    list_id.append(elem[0])
+                list_id.sort()
+                result = list_id[-1]  # определяю id нового юзера и запоминаю его
                 con.close()
                 global id_user
                 id_user = result
@@ -829,6 +881,8 @@ class Main_window_user(QMainWindow, Ui_main_window_user):  # сощдаю class 
         QWidget.setFixedSize(self, 679, 434)
         self.swap_password.clicked.connect(self.run)
         self.back_buttom.clicked.connect(self.back)
+        self.leave_but.clicked.connect(self.leave)
+        self.origin.clicked.connect(self.origins)
         con = sqlite3.connect("info.sqlite")
         cur = con.cursor()
         info = cur.execute(f"""SELECT login, username, score FROM user_info
@@ -848,6 +902,36 @@ class Main_window_user(QMainWindow, Ui_main_window_user):  # сощдаю class 
     def back(self):
         form3_1.hide()
         form3.show()
+
+    def leave(self):
+        form3_1.hide()
+        form1.show()
+
+    def origins(self):
+        form3_1.hide()
+        form6.show()
+
+
+class Origin_win(QMainWindow, Ui_origins_win):
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
+        QWidget.setFixedSize(self, 593, 564)
+        self.return_but.clicked.connect(self.back)
+        con = sqlite3.connect("info.sqlite")
+        cur = con.cursor()
+        info = cur.execute("""SELECT help_text FROM help_info
+                                                            WHERE id = 15""").fetchall()
+        info = info[0][0]
+        with open(info, 'r', encoding='utf8') as f:
+            data = f.read()
+            self.origin_textEdit.setText(data)
+        con.close()
+
+
+    def back(self):
+        form6.hide()
+        form3_1.show()
 
 
 class Swap_password(QMainWindow, Ui_Swap_password_window):
@@ -1339,6 +1423,7 @@ if __name__ == '__main__':
     form5_1 = Theme(0)
     form5_2 = Test_win(1)
     form5_3 = Answer_win(0, '00:00:00', 1)
+    form6 = Origin_win()
     form1.show()
     sys.excepthook = except_hook
     sys.exit(app.exec_())
