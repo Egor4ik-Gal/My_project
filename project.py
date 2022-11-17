@@ -572,7 +572,7 @@ class Ui_Teach_window(object):  # создаю дизайн для окна "Tea
         self.back_but.setText(_translate("Teach_window", "<-- Назад"))
 
 
-class Ui_Theme(object):  # создаю дизайн для окна "Theme"
+class Ui_Theme(object):  # создаю дизайн окна Theme
     def setupUi(self, Theme):
         Theme.setObjectName("Theme")
         Theme.resize(713, 553)
@@ -595,6 +595,12 @@ class Ui_Theme(object):  # создаю дизайн для окна "Theme"
         self.test_but = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.test_but.setObjectName("test_but")
         self.horizontalLayout.addWidget(self.test_but)
+        self.label = QtWidgets.QLabel(Theme)
+        self.label.setGeometry(QtCore.QRect(50, 460, 101, 81))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("6C-1D.jpg"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
 
         self.retranslateUi(Theme)
         QtCore.QMetaObject.connectSlotsByName(Theme)
@@ -604,6 +610,7 @@ class Ui_Theme(object):  # создаю дизайн для окна "Theme"
         Theme.setWindowTitle(_translate("Theme", "Тема"))
         self.back_but.setText(_translate("Theme", "<-- Назад"))
         self.test_but.setText(_translate("Theme", "Пройти тест"))
+
 
 
 class Ui_test_win(object):  # создаю дизайн для окна "Test_win"
@@ -1194,6 +1201,7 @@ class Theme(QMainWindow, Ui_Theme):  # создаю class Theme
             with open(result[0], 'r', encoding='utf8') as f:
                 data = f.read()
                 self.textEdit_themes.setText(data)
+            self.label.setPixmap(QtGui.QPixmap("help.jpg"))
             con.close()
         elif self.id == 2:
             result = cur.execute("""SELECT help_text FROM help_info
@@ -1202,6 +1210,7 @@ class Theme(QMainWindow, Ui_Theme):  # создаю class Theme
             with open(result[0], 'r', encoding='utf8') as f:
                 data = f.read()
                 self.textEdit_themes.setText(data)
+            self.label.setPixmap(QtGui.QPixmap("man.png"))
             con.close()
         elif self.id == 3:
             result = cur.execute("""SELECT help_text FROM help_info
@@ -1210,6 +1219,7 @@ class Theme(QMainWindow, Ui_Theme):  # создаю class Theme
             with open(result[0], 'r', encoding='utf8') as f:
                 data = f.read()
                 self.textEdit_themes.setText(data)
+            self.label.setPixmap(QtGui.QPixmap("fire.png"))
             con.close()
 
     def back(self):
