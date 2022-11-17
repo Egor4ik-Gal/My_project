@@ -833,6 +833,8 @@ class Regist_window(QMainWindow, Ui_reg_page):
                     "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Этот логин уже занят!<br/></span></p></body></html>")
             else:
                 global form3
+                global form4
+                form4 = Help_window(1)
                 inf = cur.execute(
                     f"""INSERT INTO user_info(id_user, login, password, username, score) VALUES('{str(ids)}', '{self.lineEdit_login.text()}',
                      '{self.lineEdit_password.text()}', '{self.lineEdit_name_user.text()}', '0')""")  # создаю нового пользователя в БД
