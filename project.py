@@ -1,7 +1,7 @@
 import sys
 import sqlite3
 
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget
+from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QMessageBox
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
@@ -283,7 +283,6 @@ class Ui_main_window_user(object):
         self.count_label.setText(_translate("main_window_user", "Количество правильных ответов:"))
         self.leave_but.setText(_translate("main_window_user", "Выйти из аккаунта"))
         self.origin.setText(_translate("main_window_user", "Источники"))
-
 
 
 class Ui_Swap_password_window(object):  # создаю дизайн для окна "Swap_password_window"
@@ -612,7 +611,6 @@ class Ui_Theme(object):  # создаю дизайн окна Theme
         self.test_but.setText(_translate("Theme", "Пройти тест"))
 
 
-
 class Ui_test_win(object):  # создаю дизайн для окна "Test_win"
     def setupUi(self, test_win):
         test_win.setObjectName("test_win")
@@ -711,11 +709,12 @@ class Ui_origins_win(object):
     def retranslateUi(self, origins_win):
         _translate = QtCore.QCoreApplication.translate
         origins_win.setWindowTitle(_translate("origins_win", "Источники"))
-        self.origin_textEdit.setHtml(_translate("origins_win", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:16px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;\"><br /></p></body></html>"))
+        self.origin_textEdit.setHtml(_translate("origins_win",
+                                                "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                                "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                                "p, li { white-space: pre-wrap; }\n"
+                                                "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+                                                "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:16px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;\"><br /></p></body></html>"))
         self.return_but.setText(_translate("origins_win", "Вернуться в личный кабинет"))
 
 
@@ -785,17 +784,21 @@ class Regist_window(QMainWindow, Ui_reg_page):
     def run(self):
         if self.lineEdit_login.text() == '':  # проверю чтобы поле логина было не пустым, иначе ошибка
             self.error_label.setText(
-                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Заполните поле для логина!<br/></span></p></body></html>")
+                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">"
+                "Заполните поле для логина!<br/></span></p></body></html>")
         elif self.lineEdit_password.text() == '':  # проверю чтобы поле пароля было не пустым, иначе ошибка
             self.error_label.setText(
-                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Заполните поле для пароля!<br/></span></p></body></html>")
+                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">"
+                "Заполните поле для пароля!<br/></span></p></body></html>")
         elif self.lineEdit_name_user.text() == '':  # проверю чтобы поле имени было не пустым, иначе ошибка
             self.error_label.setText(
-                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Заполните поле для имени!<br/></span></p></body></html>")
+                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">"
+                "Заполните поле для имени!<br/></span></p></body></html>")
         elif len(self.lineEdit_password.text()) < 8:  # проверю чтобы длинну пароля было не пустым, иначе ошибка
             self.error_label.setText(
-                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должно содержаться больше 7 символов!<br/></span></p></body></html>")
-        if len(self.lineEdit_password.text()) > 7:  # если длинна пароля больше 7 символов, то проверяю пароль на различные символы, если не выполняется минимальный критерий - ошибка
+                "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">"
+                "В пароле должно содержаться больше 7 символов!<br/></span></p></body></html>")
+        if len(self.lineEdit_password.text()) > 7:  # если длинна пароля больше 7 символов, то проверяю пароль на различные символы
             count_upper = 0  # проверка чтобы хотя бы 1 символ был заглавной буквой
             count_lowwer = 0  # проверка чтобы хотя бы 1 символ был строчной буквой
             count_numbers = 0  # проверка чтобы хотя бы 1 символ был цифрой
@@ -807,8 +810,9 @@ class Regist_window(QMainWindow, Ui_reg_page):
                 elif i in 'qwertyuiopasdfghjklzxcvbnmйцукенгшщзхъэфжыдвлаопрмистчяьбюё'.upper():
                     count_upper += 1
                 else:
-                    self.error_label.setText(
-                        "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть только цифры и буквы!<br/></span></p></body></html>")
+                    self.error_label.setText(                       # если не выполняется минимальный критерий - ошибка
+                        "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">"
+                        "В пароле должны быть только цифры и буквы!<br/></span></p></body></html>")
                     break
             con = sqlite3.connect("info.sqlite")  # подключаюсь к БД
             cur = con.cursor()
@@ -821,22 +825,27 @@ class Regist_window(QMainWindow, Ui_reg_page):
             ids = max(ids) + 1  # создаю новый неповторяющийся id_user
             if count_upper == 0:  # проверяю пароль на наличие заглавных букв
                 self.error_label.setText(
-                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть заглавные буквы!<br/></span></p></body></html>")
+                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">"
+                    "В пароле должны быть заглавные буквы!<br/></span></p></body></html>")
             elif count_lowwer == 0:  # проверяю пароль на наличие строчных букв
                 self.error_label.setText(
-                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть строчные буквы!<br/></span></p></body></html>")
+                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">"
+                    "В пароле должны быть строчные буквы!<br/></span></p></body></html>")
             elif count_numbers == 0:  # проверяю пароль на наличие цифр
                 self.error_label.setText(
-                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть цифры!<br/></span></p></body></html>")
+                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">"
+                    "В пароле должны быть цифры!<br/></span></p></body></html>")
             elif self.lineEdit_login.text() in logins:  # проверяю чтобы логин не повторялся
                 self.error_label.setText(
-                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Этот логин уже занят!<br/></span></p></body></html>")
+                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">"
+                    "Этот логин уже занят!<br/></span></p></body></html>")
             else:
                 global form3
                 global form4
                 form4 = Help_window(1)
                 inf = cur.execute(
-                    f"""INSERT INTO user_info(id_user, login, password, username, score) VALUES('{str(ids)}', '{self.lineEdit_login.text()}',
+                    f"""INSERT INTO user_info(id_user, login, password, username, score)
+                     VALUES('{str(ids)}', '{self.lineEdit_login.text()}',
                      '{self.lineEdit_password.text()}', '{self.lineEdit_name_user.text()}', '0')""")  # создаю нового пользователя в БД
                 con.commit()  # сохраняю изменения таблицы
                 result = cur.execute("""SELECT id_user FROM user_info""").fetchall()
@@ -912,16 +921,22 @@ class Main_window_user(QMainWindow, Ui_main_window_user):  # сощдаю class 
         form3_1.hide()
         form3.show()
 
-    def leave(self):
-        form3_1.hide()
-        form1.show()
+    def leave(self):  # обрабатываю функцию выхода из личного кабинета
+        valid = QMessageBox.question(
+            self, 'Выход из аккаунта', "Вы действительно хотите выйти из аккаунта?",
+            QMessageBox.Yes, QMessageBox.No)
+        # уточняю у пользователя хочет ли он выйти из аккаунта
+        if valid == QMessageBox.Yes:
+            form3_1.hide()
+            form1.show()
 
     def origins(self):
         form3_1.hide()
         form6.show()
 
 
-class Origin_win(QMainWindow, Ui_origins_win):
+class Origin_win(QMainWindow, Ui_origins_win):  # создаю класс Origin_win,
+    # в котором показываю ссылки на сайты с которых взял информацию
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -936,7 +951,6 @@ class Origin_win(QMainWindow, Ui_origins_win):
             data = f.read()
             self.origin_textEdit.setText(data)
         con.close()
-
 
     def back(self):
         form6.hide()
@@ -957,14 +971,14 @@ class Swap_password(QMainWindow, Ui_Swap_password_window):
         con = sqlite3.connect("info.sqlite")
         cur = con.cursor()
         info = cur.execute(f"""SELECT password FROM user_info
-                                                    WHERE id_user = {self.id}""").fetchall()  # получаю правильный пароль пользователя
+                                    WHERE id_user = {self.id}""").fetchall()  # получаю правильный пароль пользователя
         info = info[0][0]
         con.close()
-        if self.lineEdit_old_password.text() == info:  # если введенный пароль совпадает со старым, начинаю проверку нового пароля
+        if self.lineEdit_old_password.text() == info:  # если введенный пароль совпадает со старым
             count_upper = 0
             count_lowwer = 0
             count_numbers = 0
-            for i in self.lineEdit_new_password.text():
+            for i in self.lineEdit_new_password.text():  # начинаю проверку нового пароля
                 if i in '1234567890':
                     count_numbers += 1
                 elif i in 'qwertyuiopasdfghjklzxcvbnmйцукенгшщзхъэфжыдвлаопрмистчяьбюё':
@@ -973,26 +987,33 @@ class Swap_password(QMainWindow, Ui_Swap_password_window):
                     count_upper += 1
                 else:
                     self.error_label.setText(
-                        "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть только цифры и буквы!<br/></span></p></body></html>")
+                        "<html><head/><body><p align=\"center\"><span style=\""
+                        " font-size:12pt; color:#ff0000;\">"
+                        "В пароле должны быть только цифры и буквы!<br/></span></p></body></html>")
                     break
             if count_upper == 0:
                 self.error_label.setText(
-                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть заглавные буквы!<br/></span></p></body></html>")
+                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">"
+                    "В пароле должны быть заглавные буквы!<br/></span></p></body></html>")
             elif count_lowwer == 0:
                 self.error_label.setText(
-                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть строчные буквы!<br/></span></p></body></html>")
+                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">"
+                    "В пароле должны быть строчные буквы!<br/></span></p></body></html>")
             elif count_numbers == 0:
                 self.error_label.setText(
-                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">В пароле должны быть цифры!<br/></span></p></body></html>")
+                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">"
+                    "В пароле должны быть цифры!<br/></span></p></body></html>")
             elif len(self.lineEdit_new_password.text()) < 8:
                 self.error_label.setText(
-                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">Пароль должен быть больше 7 символов!<br/></span></p></body></html>")
+                    "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; color:#ff0000;\">"
+                    "Пароль должен быть больше 7 символов!<br/></span></p></body></html>")
             elif self.lineEdit_new_password.text() == self.lineEdit_new_password2.text() and len(
                     self.lineEdit_new_password.text()) > 7:
                 con = sqlite3.connect("info.sqlite")
                 cur = con.cursor()
                 inf = cur.execute(
-                    f"""UPDATE user_info SET password = '{self.lineEdit_new_password.text()}' where id_user = '{self.id}'""")  # обновляю пароль в БД для пользователя
+                    f"""UPDATE user_info SET password = '{self.lineEdit_new_password.text()}'
+                     where id_user = '{self.id}'""")  # обновляю пароль в БД для пользователя
                 con.commit()
                 con.close()
                 form3_2.hide()
@@ -1117,11 +1138,11 @@ class Help_window1_result1(QMainWindow, Ui_Help_window1_1):  # создаю clas
             con.close()
 
     def back(self):
-        if self.reg == 0:  # если пользователь неавторизированн, то выходить на окно со входом, иначе возвращается в главное меню
-            form4_1_1.hide()
+        if self.reg == 0:  # если пользователь неавторизированн
+            form4_1_1.hide()  # то выходить на окно со входом
             form1.show()
         else:
-            form4_1_1.hide()
+            form4_1_1.hide()  # иначе возвращается в главное меню
             form3.show()
 
 
@@ -1388,10 +1409,13 @@ class Answer_win(QMainWindow, Ui_answer):
         self.setupUi(self)
         QWidget.setFixedSize(self, 475, 353)
         result = self.label_answer.text().replace('3', f'{self.count}', 1).replace('$', f'{self.time}',
-                                                                                   1)  # заменяю '3' на колчество баллов на баллы которые получил пользователь и заменяю '$' на время, затраченное пользователем
+                                                                                   1)  # заменяю '3'
+        # на колчество баллов на баллы которые получил пользователь и заменяю '$' на время, затраченное пользователем
         if self.count == 1:
+            result = result.replace('Вы правильно решили все задания!', 'Вы запомнили не все!', 1)
             result = result.replace('балла', 'балл', 1)  # если пользователь получил 1 балл, то меняеться окончание
         elif self.count == 0:
+            result = result.replace('Вы правильно решили все задания!', 'Подготовтесь лучше!', 1)
             result = result.replace('балла', 'баллов')  # если пользователь получил 0 баллов, то меняеться окончание
         con = sqlite3.connect("info.sqlite")
         cur = con.cursor()
@@ -1399,7 +1423,8 @@ class Answer_win(QMainWindow, Ui_answer):
             f"""SELECT score FROM user_info WHERE id_user = '{self.id}'""").fetchall()  # получаю score пользователя
         score = result2[0][0]
         inf = cur.execute(
-            f"""UPDATE user_info SET score = '{self.count + score}' where id_user = '{self.id}'""")  # обноваляю score  пользователя
+            f"""UPDATE user_info SET score = '{self.count + score}' where id_user = '{self.id}'""")  # обноваляю score
+                                                                                                     # пользователя
         con.commit()
         con.close()
         self.label_answer.setText(result)
@@ -1422,8 +1447,8 @@ def except_hook(cls, exception, traceback):  # функция чтобы вид�
 id_user = 1
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    form1 = Password_form()  # прописываю различные переменные чтобы вызывать окна, без переменных окна при вызове сами закрываться
-    form2 = Regist_window()
+    form1 = Password_form()  # прописываю различные переменные чтобы
+    form2 = Regist_window()  # вызывать окна, без переменных окна при вызове сами закрываться
     form3 = Main_window(1)
     form3_1 = Main_window_user(1)
     form3_2 = Swap_password(1)
